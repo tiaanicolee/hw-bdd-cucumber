@@ -38,8 +38,8 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   #fail "Unimplemented"
 end
 
-Then /I should see all the movies/ do
-  # Make sure that all the movies in the app are visible in the table
-  assert page.all('#movies tr').size - 1 == Movie.count()
+Then /I should see all of the movies/ do
+  rows = page.all('#movies tr').size - 1
+  rows.should == Movie.count()
   #fail "Unimplemented"
 end
