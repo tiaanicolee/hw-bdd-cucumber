@@ -15,7 +15,7 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  assert page.body.index(e1) < page.body.index(e2)
+  page.body.index(e1).should < page.body.index(e2)
   #fail "Unimplemented"
 end
 
